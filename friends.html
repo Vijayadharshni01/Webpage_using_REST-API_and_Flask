@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Database Page{% endblock title %}
+
+{% block content %}
+    <div class="container">
+      <h1>Names in Database</h1>
+
+      <form action="/friends" METHOD="POST">
+        <input type="text" placeholder="Name" name="name">
+        <input type="submit" value="Add Name" class = "btn btn-secondary">
+      </form>
+      <ul>
+        {% for friend in friends %}
+          <li>{{ friend.name }}</li> <a href ="/update/{{friend.id}}" class="btn btn-outline-secondary btn-sm">Update</a>
+        {% endfor %}
+      </ul>
+    </div>
+{% endblock %}
+
+

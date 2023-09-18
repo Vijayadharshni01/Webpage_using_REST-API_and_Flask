@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}About Vijayadharshni{% endblock title %}
+
+{% block content %}
+      <div class = "container">
+        <h1>About Vijayadharshni</h1>
+        <p>
+
+            {% for sentence in aboutme %}
+                {% if sentence == 'my name is vijayadharshni'%}
+                    <p>{{sentence}}</p>
+                    <p>She is a good girl</p>
+                {% else %}
+                    <p>{{sentence}}</p>
+                {% endif %}
+            {% endfor %}
+        </p>
+
+      </div>
+{% endblock %}

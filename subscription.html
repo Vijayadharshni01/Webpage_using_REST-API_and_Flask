@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Subscription page{% endblock title %}
+
+
+{% block content %}
+      <div class="container">
+        <br></br>
+        {% if error_message %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{ error_message }}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <br></br>
+        <h1>Subscribe to my page</h1>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <form action="/form" method="POST">
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First name" name="first_name" value="{{first_name}}">
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Last name" name="last_name" value="{{ last_name }}">
+                </div>
+                <div class="mb-3">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Addresss" name="email" value="{{ email }}">
+                </div>
+                <div class="mb-3">
+                  <button type="submit" class="btn btn-secondary mb-3">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+      
+      
+{% endblock content %}
